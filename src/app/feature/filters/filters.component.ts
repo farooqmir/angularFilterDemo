@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FILTERS} from '../shared/filters';
 
 @Component({  
@@ -8,6 +8,7 @@ import {FILTERS} from '../shared/filters';
 })
 export class FiltersComponent implements OnInit {
   
+  @Output() onFilterChange = new EventEmitter();
   filters = FILTERS;
 
   constructor() { }
@@ -17,17 +18,25 @@ export class FiltersComponent implements OnInit {
     console.log(this.filters);
   }
 
-  selectAnd(category,filter){
+  selectOr(category,filter,filters_,categories){
+    
+    if(typeof category.selectCount == 'undefined')
+     category.selectCount=0;
+
     category.selectedValue=filter.value;
     filter.isSelected = true;
+    category.selectCount=1;
+    
     category.filters.map(function(filter){
       filter.isSelected = false;
       return filter;
     });
     filter.isSelected = true;
+
+    this.onFilterChange.emit({'category':category, 'filter':filter,'filters':filters_,'categories':categories});
   }
   
-  select(category, filter){
+  selectAnd(category, filter, filters_, categories){
     filter.isSelected = !filter.isSelected;
     
     if(typeof category.selectCount == 'undefined')
@@ -45,7 +54,8 @@ export class FiltersComponent implements OnInit {
       category.selectedValue = category.selectedValue.replace(remItem,"");
       category.selectCount--;
     }
-    
+   
+    this.onFilterChange.emit({'category':category, 'filter':filter,'filters':filters_,'categories':categories});
   }
 
   ngOnInit() {

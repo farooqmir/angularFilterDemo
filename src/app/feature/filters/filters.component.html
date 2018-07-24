@@ -5,11 +5,11 @@
      {{category.name}}
     <ul>
       <li *ngFor="let filter of category.filters">
-        <div *ngIf="category.operation=='AND'">
-            <input [name]="category.name" (change)="selectAnd(category,filter)"  type="radio"/>{{filter.name}}
-        </div>
         <div *ngIf="category.operation=='OR'">
-            <input (change)="select(category,filter)" type="checkbox"/>{{filter.name}}
+            <input [name]="category.name" (change)="selectOr(category,filter,category.filters,filters)"  type="radio"/>{{filter.name}}
+        </div>
+        <div *ngIf="category.operation=='AND'">
+            <input (change)="selectAnd(category,filter,category.filters,filters)" type="checkbox"/>{{filter.name}}
         </div>
         
       </li>

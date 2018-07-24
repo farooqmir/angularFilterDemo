@@ -3,21 +3,21 @@ export const ITEMS = [
     //polo Red,S,L,XL, full
      {
          id:1,
-         brandName:'polo',
+         brand:'polo',
          size:'XL',
          color:'red',
          sleves:'full'
      },
      {
         id:2,
-        brandName:'polo',
+        brand:'polo',
         size:'L',
         color:'red',
         sleves:'full'
     },
     {
         id:3,
-        brandName:'polo',
+        brand:'polo',
         size:'S',
         color:'red',
         sleves:'full'
@@ -26,14 +26,14 @@ export const ITEMS = [
     //polo blue L,XL, full
     {
         id:4,
-        brandName:'polo',
+        brand:'polo',
         size:'XL',
         color:'red',
         sleves:'full'
     },
     {
        id:5,
-       brandName:'polo',
+       brand:'polo',
        size:'L',
        color:'blue',
        sleves:'full'
@@ -42,21 +42,21 @@ export const ITEMS = [
     //UCB Red,S,L,XL, full
    {
        id:6,
-       brandName:'polo',
+       brand:'ucb',
        size:'S',
        color:'red',
        sleves:'full'
    },
    {
         id:7,
-        brandName:'polo',
+        brand:'ucb',
         size:'L',
         color:'red',
         sleves:'full'
     },
     {
         id:8,
-        brandName:'polo',
+        brand:'polo',
         size:'XL',
         color:'red',
         sleves:'full'

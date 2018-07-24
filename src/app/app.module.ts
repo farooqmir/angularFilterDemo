@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FiltersComponent } from './feature/filters/filters.component';
 import { SelectedFiltersComponent } from './feature/selected-filters/selected-filters.component';
 import { ProductsComponent } from './feature/products/products.component';
+import { FilteringService } from './feature/shared/services/filtering.service';
  
 
 @NgModule({
@@ -17,7 +18,7 @@ import { ProductsComponent } from './feature/products/products.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [FilteringService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
